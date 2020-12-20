@@ -1,0 +1,3 @@
+include ':mvlibrary'
+include ':app'
+rootProject.name = "text_1219"
