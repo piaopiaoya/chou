@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mvlibrary.base.BaseActivity;
-import com.example.mvlibrary.utils.UrlUtil;
 import com.example.text_1219.R;
 import com.example.text_1219.adapter.RvAdapter;
 import com.example.text_1219.bean.ListBean;
@@ -28,14 +27,14 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         mainPresenter = new MainPresenter(this);
-        this.mainPresenter.getMainPresenter();
-        initView();
+//         mainPresenter = new MainPresenter(this);
+//        mainPresenter.getMainPresenter();
+//        initView();
     }
 
     @Override
     protected void initData() {
-
+        mainPresenter.getMainPresenter();
     }
 
 

@@ -15,8 +15,13 @@ public class MainContract {
         void getMainPresenter();
     }
 
-    public interface getMainModel<L> extends BaseModel {
-        <T> void getMainModer(String url, NetCallBack<T> callBack);
+    public interface getMainModel<B> extends BaseModel {
+         void getMainModer(String url, NetCallBack<B> callBack);
+    }
+
+    public interface getMainView<T> extends BaseView {
+        void OnSeccess(ListBean listBean);
+        void OnFail(String err);
     }
 }
 
