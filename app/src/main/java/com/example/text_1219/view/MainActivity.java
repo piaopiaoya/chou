@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mvlibrary.base.BaseActivity;
 import com.example.mvlibrary.utils.UrlUtil;
 import com.example.text_1219.R;
 import com.example.text_1219.adapter.RvAdapter;
-import com.example.text_1219.base.BaseActivity;
 import com.example.text_1219.bean.ListBean;
 import com.example.text_1219.contract.MainContract;
 import com.example.text_1219.presenter.MainPresenter;
@@ -28,15 +28,16 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mainPresenter.getMainPresenter();
+         mainPresenter = new MainPresenter(this);
+        this.mainPresenter.getMainPresenter();
         initView();
     }
 
     @Override
     protected void initData() {
-        mainPresenter = new MainPresenter(UrlUtil.LIST);
+
     }
+
 
     protected void initView() {
         rv = (RecyclerView) findViewById(R.id.rv);
@@ -49,12 +50,12 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     protected MainPresenter getPresenter() {
-        return new MainPresenter();
+        return new MainPresenter(this);
     }
 
     @Override
     protected int setConentById() {
-        return 0;
+        return R.layout.activity_main;
     }
 
     @Override

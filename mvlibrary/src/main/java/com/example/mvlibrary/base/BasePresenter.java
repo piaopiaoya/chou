@@ -1,4 +1,4 @@
-package com.example.text_1219.base;
+package com.example.mvlibrary.base;
 
 public abstract class BasePresenter<M extends BaseModel, V extends BaseView> {
     protected M model;
